@@ -2,9 +2,9 @@ package net.josegarvin.services;
 
 import java.util.List;
 
-import net.josegarvin.model.Planetes;
+import net.josegarvin.model.Planeta;
 
 
 public interface PlanetaService {
-	public List<Planetes> findAll();
+	public List<Planeta> findAll();
 }

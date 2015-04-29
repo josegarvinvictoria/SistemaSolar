@@ -4,7 +4,7 @@
     <description>Forge Persistence Unit</description>
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <jta-data-source>java:jboss/datasources/SistemaSolar</jta-data-source>
-    <class>net.josegarvin.model.Planetes</class>
+    <class>net.josegarvin.model.Planeta</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
      <property name="hibernate.hbm2ddl.auto" value="create-drop"/>

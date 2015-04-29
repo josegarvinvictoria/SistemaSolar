@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="id" value='#{planetaBean.id}'/>
+		<f:event type="preRenderView" listener='#{planetaBean.retrieve}'/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="View Planeta"/>
+
+	<ui:define name="header">
+		Planeta
+	</ui:define>
+
+	<ui:define name="subheader">
+		View existing Planeta
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:panelGrid columnClasses="label,component,required" columns="3">
+			<h:outputLabel for="planetaBeanPlanetaNom" value="Nom:"/>
+			<h:outputText id="planetaBeanPlanetaNom" value="#{planetaBean.planeta.nom}"/>
+			<h:outputText/>
+			<h:outputLabel for="planetaBeanPlanetaDistancia" value="Distancia:"/>
+			<h:outputText id="planetaBeanPlanetaDistancia" value="#{planetaBean.planeta.distancia}"/>
+			<h:outputText/>
+			<h:outputLabel for="planetaBeanPlanetaVelocitat" value="Velocitat:"/>
+			<h:outputText id="planetaBeanPlanetaVelocitat" value="#{planetaBean.planeta.velocitat}"/>
+			<h:outputText/>
+			<h:outputLabel for="planetaBeanPlanetaDiametre" value="Diametre:"/>
+			<h:outputText id="planetaBeanPlanetaDiametre" value="#{planetaBean.planeta.diametre}"/>
+			<h:outputText/>
+			<h:outputLabel for="planetaBeanPlanetaSatelits" value="Satelits:"/>
+			<h:dataTable id="planetaBeanPlanetaSatelits" styleClass="data-table" value="#{planetaBean.planeta.satelits}" var="_item">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nom"/>
+					</f:facet>
+					<h:link outcome="/satelit/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemNom" value="#{_item.nom}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Diametre"/>
+					</f:facet>
+					<h:link outcome="/satelit/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemDiametre" value="#{_item.diametre}"/>
+					</h:link>
+				</h:column>
+			</h:dataTable>
+			<h:outputText/>
+		</h:panelGrid>
+
+		<div class="buttons">
+			<h:link value="View All" outcome="search" styleClass="btn btn-primary"/> 
+			<h:link value="Edit" outcome="create" includeViewParams="true" styleClass="btn btn-primary"/>
+			<h:link value="Create New" outcome="create" styleClass="btn btn-primary"/>
+		</div>
+	</ui:define>
+
+</ui:composition>

@@ -17,7 +17,7 @@ import javax.transaction.RollbackException;
 import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 
-import net.josegarvin.model.Planetes;
+import net.josegarvin.model.Planeta;
 import net.josegarvin.services.PlanetaService;
 
 
@@ -41,14 +41,14 @@ public class PlanetaServiceImpl implements PlanetaService{
 		  //UserTransaction userTxn = sessionContext.getUserTransaction();
 		  
 		    // Crea dos objectes i es persisteixen
-		    Planetes mart = new Planetes();
+		    Planeta mart = new Planeta();
 		    
 		    mart.setNom("Mart");
 		    mart.setDiametre(1000000.0);
 		    mart.setVelocitat(58.8);
 		    mart.setDistancia(58888.6);
 		    
-		    Planetes pluto = new Planetes();
+		    Planeta pluto = new Planeta();
 		    pluto.setNom("Plutó");
 		    pluto.setDiametre(100430000.0);
 		    pluto.setVelocitat(5833.8);
@@ -88,8 +88,8 @@ public class PlanetaServiceImpl implements PlanetaService{
 		  }
 
 	@Override
-	public List<Planetes> findAll() {
-		TypedQuery<Planetes> colorsq = em.createQuery("SELECT c FROM Planetes c", Planetes.class);
+	public List<Planeta> findAll() {
+		TypedQuery<Planeta> colorsq = em.createQuery("SELECT c FROM Planetes c", Planeta.class);
 	    return colorsq.getResultList();
 	}
 }

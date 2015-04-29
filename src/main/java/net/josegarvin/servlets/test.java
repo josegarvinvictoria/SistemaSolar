@@ -18,7 +18,7 @@ import javax.transaction.NotSupportedException;
 import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 
-import net.josegarvin.model.Planetes;
+import net.josegarvin.model.Planeta;
 
 /**
  * Servlet implementation class test
@@ -52,7 +52,7 @@ public class test extends HttpServlet {
 		
 		try {
 			tx.begin();
-			Planetes pluto = new Planetes();
+			Planeta pluto = new Planeta();
 			
 			pluto.setNom("Pluto");
 			pluto.setDiametre(2000.0);
