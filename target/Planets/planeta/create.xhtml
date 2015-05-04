@@ -12,19 +12,19 @@
 		<f:event type="preRenderView" listener='#{planetaBean.retrieve}'/>
 	</f:metadata>
 
-	<ui:param name="pageTitle" value="Create Planeta"/>
+	<ui:param name="pageTitle" value="Crear nou planeta"/>
 
 	<ui:define name="header">
-		Planeta
+		Planetes
 	</ui:define>
 
 	<ui:define name="subheader">
 		<c:choose>
 			<c:when test='#{!empty planetaBean.id}'>
-				Edit existing Planeta
+				Editar un planeta existent
 			</c:when>
 			<c:otherwise>
-				Create a new Planeta
+				Crear un nou planeta
 			</c:otherwise>
 		</c:choose>
 	</ui:define>
@@ -104,16 +104,16 @@
 			</h:panelGrid>
 
 			<div class="buttons">
-				<h:commandLink value="Save" action='#{planetaBean.update}' styleClass="btn btn-primary"/>
+				<h:commandLink value="Desar" action='#{planetaBean.update}' styleClass="btn btn-primary"/>
 				<c:choose>
 					<c:when test='#{!empty planetaBean.id}'>
-						<h:link value="Cancel" outcome="view" styleClass="btn btn-primary">
+						<h:link value="Cancel.lar" outcome="view" styleClass="btn btn-primary">
 							<f:param name="id" value='#{planetaBean.id}'/>
 						</h:link>
-						<h:commandLink value="Delete" action='#{planetaBean.delete}' styleClass="btn btn-primary"/>
+						<h:commandLink value="Eliminar" action='#{planetaBean.delete}' styleClass="btn btn-primary"/>
 					</c:when>
 					<c:otherwise>
-						<h:link value="Cancel" outcome="search" styleClass="btn btn-primary"/>
+						<h:link value="Cancel.lar" outcome="search" styleClass="btn btn-primary"/>
 					</c:otherwise>
 				</c:choose>
 			</div>

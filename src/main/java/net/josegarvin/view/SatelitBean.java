@@ -1,6 +1,7 @@
 package net.josegarvin.view;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -275,6 +277,26 @@ public class SatelitBean implements Serializable
             .getCriteriaBuilder().createQuery(Satelit.class);
       return this.entityManager.createQuery(
             criteria.select(criteria.from(Satelit.class))).getResultList();
+   }
+   
+   public List<Satelit> getAllSatelitsByPlaneta()
+   {
+	   List<Satelit> satelits = new ArrayList<Satelit>();
+
+      CriteriaQuery<Satelit> criteria = this.entityManager
+            .getCriteriaBuilder().createQuery(Satelit.class);
+      return this.entityManager.createQuery(
+            criteria.select(criteria.from(Satelit.class))).getResultList();
+   }
+
+   public Long findIdByName(String nomPlaneta){
+	   Query query = entityManager.createQuery("select id from Planeta where nom = '" + nomPlaneta +"'");
+	   Long idPlaneta = (Long) query.getSingleResult();
+	   System.out.println(idPlaneta);
+	   
+
+	   
+	   return idPlaneta;
    }
 
    @Resource

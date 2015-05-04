@@ -13,7 +13,7 @@
 		<f:event type="preRenderView" listener='#{satelitBean.retrieve}'/>
 	</f:metadata>
 
-	<ui:param name="pageTitle" value="Create Satelit"/>
+	<ui:param name="pageTitle" value="Crear satel.lit"/>
 
 	<ui:define name="header">
 		Satelit
@@ -22,10 +22,10 @@
 	<ui:define name="subheader">
 		<c:choose>
 			<c:when test='#{!empty satelitBean.id}'>
-				Edit existing Satelit
+				Editar un satel.lit existent
 			</c:when>
 			<c:otherwise>
-				Create a new Satelit
+				Crear un nou satel.lit
 			</c:otherwise>
 		</c:choose>
 	</ui:define>
@@ -61,16 +61,16 @@
 			</h:panelGrid>
 
 			<div class="buttons">
-				<h:commandLink value="Save" action='#{satelitBean.update}' styleClass="btn btn-primary"/>
+				<h:commandLink value="Desar" action='#{satelitBean.update}' styleClass="btn btn-primary"/>
 				<c:choose>
 					<c:when test='#{!empty satelitBean.id}'>
-						<h:link value="Cancel" outcome="view" styleClass="btn btn-primary">
+						<h:link value="Cancel.lar" outcome="view" styleClass="btn btn-primary">
 							<f:param name="id" value='#{satelitBean.id}'/>
 						</h:link>
-						<h:commandLink value="Delete" action='#{satelitBean.delete}' styleClass="btn btn-primary"/>
+						<h:commandLink value="Eliminar" action='#{satelitBean.delete}' styleClass="btn btn-primary"/>
 					</c:when>
 					<c:otherwise>
-						<h:link value="Cancel" outcome="search" styleClass="btn btn-primary"/>
+						<h:link value="Cancel.lar" outcome="search" styleClass="btn btn-primary"/>
 					</c:otherwise>
 				</c:choose>
 			</div>

@@ -4,10 +4,11 @@
     <description>Forge Persistence Unit</description>
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <jta-data-source>java:jboss/datasources/SistemaSolar</jta-data-source>
-    <class>net.josegarvin.model.Planeta</class>
+    <class>net.josegarvin.model.Satelit</class>
+    <class>net.josegarvin.model.Planeta</class>    
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-     <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+     <property name="hibernate.hbm2ddl.auto" value="update"/>
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.format_sql" value="true"/>
       <property name="hibernate.transaction.flush_before_completion" value="true"/>

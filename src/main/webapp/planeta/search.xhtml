@@ -11,14 +11,14 @@
 		<f:event type="preRenderView" listener='#{planetaBean.paginate}'/>
 	</f:metadata>
 
-	<ui:param name="pageTitle" value="Search Planeta entities"/>
+	<ui:param name="pageTitle" value="Cercar planetes"/>
 
 	<ui:define name="header">
-		Planeta
+		Llistat de planetes
 	</ui:define>
 
 	<ui:define name="subheader">
-		Search Planeta entities
+		Cercar planeta:
 	</ui:define>
 
 	<ui:define name="footer"/>
@@ -37,8 +37,8 @@
 						<h:outputText/>
 					</h:panelGrid>
 					<h:panelGroup styleClass="buttons">
-						<h:commandLink value="Search" action='#{planetaBean.search}' styleClass="btn btn-primary"/>
-						<h:commandLink value="Create New" action='#{planetaBean.create}' styleClass="btn btn-primary"/>
+						<h:commandLink value="Cercar" action='#{planetaBean.search}' styleClass="btn btn-primary"/>
+						<h:commandLink value="Afegir nou planeta" action='#{planetaBean.create}' styleClass="btn btn-primary"/>
 					</h:panelGroup>
 				</h:panelGroup>
 			</f:validateBean>

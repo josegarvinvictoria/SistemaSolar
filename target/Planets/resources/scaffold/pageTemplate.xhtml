@@ -21,8 +21,9 @@
                     <h:outputText value=",  #{request.userPrincipal.name}" rendered="#{request.userPrincipal !=null} "/>
 				</h:link>
 				<div class="nav-collapse collapse">
-					<ul class="nav">
-						<li><a href="http://forge.jboss.org/docs/important_plugins/ui-scaffolding.html">How to Customize</a></li>
+					 <ul class="nav">
+						<li><a href="/Planets/satelitsPerPlaneta">Satel.lits d'un planeta</a></li>
+						<li><a href="/Planets/planetaDeSatelit">Planeta d'un satel.lit</a></li>
 					</ul>
 				</div>
 			</div>
@@ -36,11 +37,12 @@
 			</h:link>
 			<ul>
 				<li>
-					<h:link outcome="/planeta/search" value="Planeta"/>
+					<h:link outcome="/planeta/search" value="Llista de planetes"/>
 				</li>
 				<li>
-					<h:link outcome="/satelit/search" value="Satelit"/>
+					<h:link outcome="/satelit/search" value="Llistat de satel.lits"/>
 				</li>
+				
 			</ul>
 		</div>
 

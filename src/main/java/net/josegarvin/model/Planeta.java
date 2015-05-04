@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 import java.lang.Override;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -46,6 +47,10 @@ public class Planeta implements Serializable
    //@JoinColumn
    @OneToMany(mappedBy = "planeta", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
    private List<Satelit> satelits;
+   
+   public Planeta(){
+	   this.satelits = new ArrayList<Satelit>();
+   }
 
    public Long getId()
    {
